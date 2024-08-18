@@ -1,0 +1,10 @@
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\bin\Debug\DataCan_Assessment.exe.config
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\bin\Debug\DataCan_Assessment.exe
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\bin\Debug\DataCan_Assessment.pdb
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.csproj.AssemblyReference.cache
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.Form1.resources
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.Properties.Resources.resources
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.csproj.GenerateResource.cache
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.csproj.CoreCompileInputs.cache
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.exe
+C:\Users\sandh\OneDrive\Desktop\CNT\C# Projects\DataCan_Assessment\DataCan_Assessment\DataCan_Assessment\obj\Debug\DataCan_Assessment.pdb
