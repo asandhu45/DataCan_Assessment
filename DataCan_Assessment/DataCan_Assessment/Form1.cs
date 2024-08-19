@@ -16,5 +16,10 @@ namespace DataCan_Assessment
         {
             InitializeComponent();
         }
+
+        private void UI_Btn_Deposit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
