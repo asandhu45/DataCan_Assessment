@@ -16,18 +16,11 @@ namespace DataCan_Assessment
     {
         //Account object
         Account acc = null;
+        CurrencyConverter convertCurrency = null;
 
         //Hardcoded starting account balance
         const decimal balance = 1000;
         
-        //Currency Dictionary - Contains all the different currencies and conversion rates
-        Dictionary<string, decimal> Currencies = new Dictionary<string, decimal>()
-        {
-            { "CAD",  1.00m  },
-            { "USD",  0.50m  },
-            { "MXN",  10.00m },
-            { "EURO", 0.25m  }
-        };
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +30,7 @@ namespace DataCan_Assessment
             //Create new account object with the starting balance
             acc = new Account(balance);
             //Update the total balance textbox
+            convertCurrency = new CurrencyConverter();
             UpdateUI();
         }
 
@@ -52,7 +46,7 @@ namespace DataCan_Assessment
             decimal amount = amountNumericUpDown.Value;
             try
             {
-                acc.Deposit(ConvertCurrency(currencyDropdown.Text, amount));
+                acc.Deposit(convertCurrency.ConvertToCAD(currencyDropdown.Text, amount));
                 UpdateUI();
             }
             catch (Exception ex)
@@ -74,7 +68,7 @@ namespace DataCan_Assessment
             decimal amount = amountNumericUpDown.Value;
             try
             {
-                acc.Withdraw(ConvertCurrency(currencyDropdown.Text, amount));
+                acc.Withdraw(convertCurrency.ConvertToCAD(currencyDropdown.Text, amount));
                 UpdateUI();
             }
             catch (Exception ex)
@@ -106,19 +100,6 @@ namespace DataCan_Assessment
         {
             balanceTexbox.Text = "$" + acc.Balance.ToString();
             amountNumericUpDown.Value = 0;
-        }
-
-        /// <summary>
-        /// Converts the specified amount from a foreign currency to CAD based on the current exchange rate.
-        /// Seperate Class for currency conversion could be made like Account based on its complexity
-        /// </summary>
-        /// <param name="currency">Selected conversion currency</param>
-        /// <param name="amt">Amount entered to be deposited or withdrawn</param>
-        /// <returns>Amount in CAD</returns>
-        public decimal ConvertCurrency(string currency, decimal amt)
-        {
-            //Divide the entered amount with selected currency conversion rate 
-            return amt / Currencies[currency];
         }
     }
 }
