@@ -39,6 +39,7 @@ namespace DataCan_Assessment
             //Update the total balance textbox
             UpdateUI();
         }
+
         /// <summary>
         /// Click event for deposit button 
         /// Deposits the converted amount to the total balance 
@@ -83,6 +84,21 @@ namespace DataCan_Assessment
                 Close();
             }
         }
+
+        /// <summary>
+        /// Resets the account information to the starting balance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            //Set the balance property to 1000
+            acc.Balance = 1000;
+            //Select CAD as the conversion currency again
+            currencyDropdown.SelectedIndex = 0;
+            UpdateUI(); 
+        }
+
         /// <summary>
         /// Update the balance textbox and clear the NumericUpDown amount
         /// </summary>
@@ -90,11 +106,6 @@ namespace DataCan_Assessment
         {
             balanceTexbox.Text = "$" + acc.Balance.ToString();
             amountNumericUpDown.Value = 0;
-        }
-
-        private void amountNumericUpDown_Click(object sender, EventArgs e)
-        {
-            amountNumericUpDown.ResetText();
         }
 
         /// <summary>

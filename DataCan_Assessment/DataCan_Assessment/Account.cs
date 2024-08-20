@@ -19,7 +19,7 @@ namespace DataCan_Assessment
         }
 
         //Account balance
-        public decimal Balance { get; private set; }
+        public decimal Balance { get; set; }
 
         /// <summary>
         /// Decrease the entered amount out of the total balance
