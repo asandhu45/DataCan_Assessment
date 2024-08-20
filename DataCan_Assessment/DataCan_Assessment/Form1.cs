@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Amanjot Sandhu
+//DataCan Assessment
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,89 +14,100 @@ namespace DataCan_Assessment
 {
     public partial class Form1 : Form
     {
+        //Account object
         Account acc = null;
-        double balance = 1000;
 
-        Dictionary<string,double>Currencies = new Dictionary<string, double>() 
+        //Hardcoded starting account balance
+        const decimal balance = 1000;
+        
+        //Currency Dictionary - Contains all the different currencies and conversion rates
+        Dictionary<string, decimal> Currencies = new Dictionary<string, decimal>()
         {
-            { "CAD",  1.00  },
-            { "USD",  0.50  },
-            { "MXN",  10.00 },
-            { "EURO", 0.25  }
+            { "CAD",  1.00m  },
+            { "USD",  0.50m  },
+            { "MXN",  10.00m },
+            { "EURO", 0.25m  }
         };
-
         public Form1()
         {
             InitializeComponent();
-            UI_DropDown_Currencies.SelectedIndex = 0;
-            UI_DropDown_AccountNum.SelectedIndex = 0;
+            //Currency & account number starting selection
+            currencyDropdown.SelectedIndex = 0;
+            AccountNum_DropDown.SelectedIndex = 0;
+            //Create new account object with the starting balance
             acc = new Account(balance);
+            //Update the total balance textbox
             UpdateUI();
         }
-
-        private void UI_Btn_Deposit_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Click event for deposit button 
+        /// Deposits the converted amount to the total balance 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void depositButton_Click(object sender, EventArgs e)
         {
-            double amount = 0;
+            //Amount to be deposited to the account
+            decimal amount = amountNumericUpDown.Value;
             try
             {
-                double.TryParse(UI_TxtBox_Amount.Text, out amount);
-                acc.Deposit(ConvertCurrency(UI_DropDown_Currencies.Text, amount));
+                acc.Deposit(ConvertCurrency(currencyDropdown.Text, amount));
                 UpdateUI();
             }
             catch (Exception ex)
             {
+                //If an error exists show the error message then close the app
                 MessageBox.Show(ex.Message);
                 Close();
             }
-          
         }
-
-        private void UI_Btn_WIthdraw_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Click event for deposit button 
+        /// Withdraws the converted amount to the total balance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void withdrawButton_Click(object sender, EventArgs e)
         {
-            double amount = 0;
-            double.TryParse(UI_TxtBox_Amount.Text, out amount);
-            acc.Withdraw(ConvertCurrency(UI_DropDown_Currencies.Text,amount));
-            UpdateUI();
+            //Amount to be withdrawn to the account
+            decimal amount = amountNumericUpDown.Value;
+            try
+            {
+                acc.Withdraw(ConvertCurrency(currencyDropdown.Text, amount));
+                UpdateUI();
+            }
+            catch (Exception ex)
+            {
+                //If an error exists show the error message then close the app
+                MessageBox.Show(ex.Message);
+                Close();
+            }
         }
-
+        /// <summary>
+        /// Update the balance textbox and clear the NumericUpDown amount
+        /// </summary>
         public void UpdateUI()
         {
-            UI_TxtBox_Balance.Text = "$" + acc.Balance.ToString();
-            Console.WriteLine(acc.Balance.ToString());
+            balanceTexbox.Text = "$" + acc.Balance.ToString();
+            amountNumericUpDown.Value = 0;
         }
 
-        public double ConvertCurrency(string currency,double amt)
+        private void amountNumericUpDown_Click(object sender, EventArgs e)
         {
+            amountNumericUpDown.ResetText();
+        }
 
-           return amt / Currencies[currency];   
-            
+        /// <summary>
+        /// Converts the specified amount from a foreign currency to CAD based on the current exchange rate.
+        /// Seperate Class for currency conversion could be made like Account based on its complexity
+        /// </summary>
+        /// <param name="currency">Selected conversion currency</param>
+        /// <param name="amt">Amount entered to be deposited or withdrawn</param>
+        /// <returns>Amount in CAD</returns>
+        public decimal ConvertCurrency(string currency, decimal amt)
+        {
+            //Divide the entered amount with selected currency conversion rate 
+            return amt / Currencies[currency];
         }
     }
-
-    public class Account
-    {
-        public Account(double bal)
-        {
-            Balance = bal;
-        }
-        public double Balance { get; set; }
-        
-        public void Withdraw(double amt)
-        {
-            if (Balance < amt) 
-            {
-                MessageBox.Show("Insufficient Funds");
-            }
-            else
-            {
-                Balance -= amt;
-            }
-        }
-        public void Deposit(double amt) 
-        {
-            Balance += amt;
-        }
-    }
-   
-
 }

@@ -28,70 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UI_Btn_Deposit = new System.Windows.Forms.Button();
-            this.UI_Btn_WIthdraw = new System.Windows.Forms.Button();
-            this.UI_TxtBox_Amount = new System.Windows.Forms.TextBox();
-            this.UI_DropDown_Currencies = new System.Windows.Forms.ComboBox();
+            this.depositButton = new System.Windows.Forms.Button();
+            this.withdrawButton = new System.Windows.Forms.Button();
+            this.currencyDropdown = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.UI_Lbl_Amount = new System.Windows.Forms.Label();
+            this.amountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.amountLabel = new System.Windows.Forms.Label();
             this.UI_Lbl_Balance = new System.Windows.Forms.Label();
-            this.UI_TxtBox_Balance = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.UI_DropDown_AccountNum = new System.Windows.Forms.ComboBox();
+            this.balanceTexbox = new System.Windows.Forms.TextBox();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.AccountNum_DropDown = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // UI_Btn_Deposit
+            // depositButton
             // 
-            this.UI_Btn_Deposit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.UI_Btn_Deposit.Location = new System.Drawing.Point(75, 165);
-            this.UI_Btn_Deposit.Name = "UI_Btn_Deposit";
-            this.UI_Btn_Deposit.Size = new System.Drawing.Size(163, 47);
-            this.UI_Btn_Deposit.TabIndex = 0;
-            this.UI_Btn_Deposit.Text = "Deposit";
-            this.UI_Btn_Deposit.UseVisualStyleBackColor = true;
-            this.UI_Btn_Deposit.Click += new System.EventHandler(this.UI_Btn_Deposit_Click);
+            this.depositButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.depositButton.Location = new System.Drawing.Point(75, 165);
+            this.depositButton.Name = "depositButton";
+            this.depositButton.Size = new System.Drawing.Size(163, 47);
+            this.depositButton.TabIndex = 2;
+            this.depositButton.Text = "Deposit";
+            this.depositButton.UseVisualStyleBackColor = true;
+            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
-            // UI_Btn_WIthdraw
+            // withdrawButton
             // 
-            this.UI_Btn_WIthdraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Btn_WIthdraw.Location = new System.Drawing.Point(440, 165);
-            this.UI_Btn_WIthdraw.Name = "UI_Btn_WIthdraw";
-            this.UI_Btn_WIthdraw.Size = new System.Drawing.Size(163, 47);
-            this.UI_Btn_WIthdraw.TabIndex = 1;
-            this.UI_Btn_WIthdraw.Text = "Withdraw";
-            this.UI_Btn_WIthdraw.UseVisualStyleBackColor = true;
-            this.UI_Btn_WIthdraw.Click += new System.EventHandler(this.UI_Btn_WIthdraw_Click);
+            this.withdrawButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.withdrawButton.Location = new System.Drawing.Point(406, 165);
+            this.withdrawButton.Name = "withdrawButton";
+            this.withdrawButton.Size = new System.Drawing.Size(163, 47);
+            this.withdrawButton.TabIndex = 3;
+            this.withdrawButton.Text = "Withdraw";
+            this.withdrawButton.UseVisualStyleBackColor = true;
+            this.withdrawButton.Click += new System.EventHandler(this.withdrawButton_Click);
             // 
-            // UI_TxtBox_Amount
+            // currencyDropdown
             // 
-            this.UI_TxtBox_Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.currencyDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_TxtBox_Amount.Font = new System.Drawing.Font("Calibri", 12F);
-            this.UI_TxtBox_Amount.Location = new System.Drawing.Point(167, 48);
-            this.UI_TxtBox_Amount.Name = "UI_TxtBox_Amount";
-            this.UI_TxtBox_Amount.Size = new System.Drawing.Size(308, 32);
-            this.UI_TxtBox_Amount.TabIndex = 2;
-            // 
-            // UI_DropDown_Currencies
-            // 
-            this.UI_DropDown_Currencies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_DropDown_Currencies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.UI_DropDown_Currencies.Font = new System.Drawing.Font("Calibri", 12F);
-            this.UI_DropDown_Currencies.FormattingEnabled = true;
-            this.UI_DropDown_Currencies.Items.AddRange(new object[] {
+            this.currencyDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyDropdown.Font = new System.Drawing.Font("Calibri", 12F);
+            this.currencyDropdown.FormattingEnabled = true;
+            this.currencyDropdown.Items.AddRange(new object[] {
             "CAD",
             "USD",
             "MXN",
             "EURO"});
-            this.UI_DropDown_Currencies.Location = new System.Drawing.Point(494, 48);
-            this.UI_DropDown_Currencies.Name = "UI_DropDown_Currencies";
-            this.UI_DropDown_Currencies.Size = new System.Drawing.Size(101, 32);
-            this.UI_DropDown_Currencies.TabIndex = 3;
+            this.currencyDropdown.Location = new System.Drawing.Point(425, 49);
+            this.currencyDropdown.Name = "currencyDropdown";
+            this.currencyDropdown.Size = new System.Drawing.Size(101, 32);
+            this.currencyDropdown.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -99,29 +89,46 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Controls.Add(this.UI_Lbl_Amount);
-            this.groupBox1.Controls.Add(this.UI_Btn_Deposit);
-            this.groupBox1.Controls.Add(this.UI_TxtBox_Amount);
-            this.groupBox1.Controls.Add(this.UI_DropDown_Currencies);
-            this.groupBox1.Controls.Add(this.UI_Btn_WIthdraw);
+            this.groupBox1.Controls.Add(this.amountNumericUpDown);
+            this.groupBox1.Controls.Add(this.amountLabel);
+            this.groupBox1.Controls.Add(this.depositButton);
+            this.groupBox1.Controls.Add(this.currencyDropdown);
+            this.groupBox1.Controls.Add(this.withdrawButton);
             this.groupBox1.Location = new System.Drawing.Point(16, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 291);
+            this.groupBox1.Size = new System.Drawing.Size(643, 291);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // UI_Lbl_Amount
+            // amountNumericUpDown
             // 
-            this.UI_Lbl_Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.amountNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_Lbl_Amount.AutoSize = true;
-            this.UI_Lbl_Amount.Font = new System.Drawing.Font("Calibri", 12F);
-            this.UI_Lbl_Amount.Location = new System.Drawing.Point(71, 51);
-            this.UI_Lbl_Amount.Name = "UI_Lbl_Amount";
-            this.UI_Lbl_Amount.Size = new System.Drawing.Size(88, 24);
-            this.UI_Lbl_Amount.TabIndex = 4;
-            this.UI_Lbl_Amount.Text = "Amount :";
+            this.amountNumericUpDown.Font = new System.Drawing.Font("Calibri", 12F);
+            this.amountNumericUpDown.Location = new System.Drawing.Point(165, 49);
+            this.amountNumericUpDown.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.amountNumericUpDown.Name = "amountNumericUpDown";
+            this.amountNumericUpDown.Size = new System.Drawing.Size(228, 32);
+            this.amountNumericUpDown.TabIndex = 0;
+            this.amountNumericUpDown.ThousandsSeparator = true;
+            // 
+            // amountLabel
+            // 
+            this.amountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.amountLabel.AutoSize = true;
+            this.amountLabel.Font = new System.Drawing.Font("Calibri", 12F);
+            this.amountLabel.Location = new System.Drawing.Point(71, 51);
+            this.amountLabel.Name = "amountLabel";
+            this.amountLabel.Size = new System.Drawing.Size(88, 24);
+            this.amountLabel.TabIndex = 4;
+            this.amountLabel.Text = "Amount :";
             // 
             // UI_Lbl_Balance
             // 
@@ -134,38 +141,39 @@
             this.UI_Lbl_Balance.TabIndex = 5;
             this.UI_Lbl_Balance.Text = "Balance:";
             // 
-            // UI_TxtBox_Balance
+            // balanceTexbox
             // 
-            this.UI_TxtBox_Balance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_TxtBox_Balance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UI_TxtBox_Balance.Location = new System.Drawing.Point(415, 65);
-            this.UI_TxtBox_Balance.Name = "UI_TxtBox_Balance";
-            this.UI_TxtBox_Balance.ReadOnly = true;
-            this.UI_TxtBox_Balance.Size = new System.Drawing.Size(204, 32);
-            this.UI_TxtBox_Balance.TabIndex = 6;
+            this.balanceTexbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.balanceTexbox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceTexbox.Location = new System.Drawing.Point(415, 65);
+            this.balanceTexbox.Name = "balanceTexbox";
+            this.balanceTexbox.ReadOnly = true;
+            this.balanceTexbox.Size = new System.Drawing.Size(204, 32);
+            this.balanceTexbox.TabIndex = 6;
+            this.balanceTexbox.TabStop = false;
             // 
-            // label1
+            // welcomeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Welcome, John Doe!";
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Location = new System.Drawing.Point(12, 15);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(181, 24);
+            this.welcomeLabel.TabIndex = 7;
+            this.welcomeLabel.Text = "Welcome, John Doe!";
             // 
-            // UI_DropDown_AccountNum
+            // AccountNum_DropDown
             // 
-            this.UI_DropDown_AccountNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UI_DropDown_AccountNum.Font = new System.Drawing.Font("Calibri", 12F);
-            this.UI_DropDown_AccountNum.Items.AddRange(new object[] {
+            this.AccountNum_DropDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AccountNum_DropDown.Font = new System.Drawing.Font("Calibri", 12F);
+            this.AccountNum_DropDown.Items.AddRange(new object[] {
             "4536",
             "3421",
             "6577"});
-            this.UI_DropDown_AccountNum.Location = new System.Drawing.Point(415, 12);
-            this.UI_DropDown_AccountNum.Name = "UI_DropDown_AccountNum";
-            this.UI_DropDown_AccountNum.Size = new System.Drawing.Size(170, 32);
-            this.UI_DropDown_AccountNum.TabIndex = 8;
+            this.AccountNum_DropDown.Location = new System.Drawing.Point(415, 12);
+            this.AccountNum_DropDown.Name = "AccountNum_DropDown";
+            this.AccountNum_DropDown.Size = new System.Drawing.Size(170, 32);
+            this.AccountNum_DropDown.TabIndex = 4;
             // 
             // label2
             // 
@@ -196,16 +204,17 @@
             this.ClientSize = new System.Drawing.Size(693, 430);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.UI_DropDown_AccountNum);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AccountNum_DropDown);
+            this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.UI_Lbl_Balance);
-            this.Controls.Add(this.UI_TxtBox_Balance);
+            this.Controls.Add(this.balanceTexbox);
             this.Controls.Add(this.groupBox1);
-            this.MinimumSize = new System.Drawing.Size(556, 397);
+            this.MinimumSize = new System.Drawing.Size(711, 477);
             this.Name = "Form1";
             this.Text = "Banking App";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,18 +222,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button UI_Btn_Deposit;
-        private System.Windows.Forms.Button UI_Btn_WIthdraw;
-        private System.Windows.Forms.TextBox UI_TxtBox_Amount;
-        private System.Windows.Forms.ComboBox UI_DropDown_Currencies;
+        private System.Windows.Forms.Button depositButton;
+        private System.Windows.Forms.Button withdrawButton;
+        private System.Windows.Forms.ComboBox currencyDropdown;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label UI_Lbl_Amount;
+        private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.Label UI_Lbl_Balance;
-        private System.Windows.Forms.TextBox UI_TxtBox_Balance;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox UI_DropDown_AccountNum;
+        private System.Windows.Forms.TextBox balanceTexbox;
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.ComboBox AccountNum_DropDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown amountNumericUpDown;
     }
 }
 
